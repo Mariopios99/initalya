@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Initalya — La Web App del turismo esperienziale italiano</title>
+<meta name="description" content="Initalya è la web app con assistente AI multilingue che trasforma ogni viaggio in un’esperienza autentica. Il progetto parte da Città Sant’Angelo, primo territorio pilota.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230E2F25'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-style='italic' font-weight='bold' font-size='34' fill='%23F7F2E9' text-anchor='middle'%3Ein%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ======= INTRO ======= -->
+<div class="intro" id="intro" aria-hidden="true">
+  <div class="intro-inner">
+    <img class="intro-logo" src="assets/logo_light.png" alt="">
+    <span class="intro-line"></span>
+    <span class="intro-tag">Turismo esperienziale italiano</span>
+  </div>
+</div>
+<script>
+(function(){try{
+  if(sessionStorage.getItem('initalya_intro') || matchMedia('(prefers-reduced-motion: reduce)').matches){
+    var i=document.getElementById('intro'); i.parentNode.removeChild(i);
+  } else {
+    document.documentElement.classList.add('intro-hold');
+  }
+}catch(e){}})();
+</script>
+
+<!-- ======= HEADER ======= -->
+<header class="header" id="header">
+  <div class="container header-inner">
+    <a href="#top" class="brand"><img class="logo-green" src="assets/logo_green.png" alt="Initalya"><img class="logo-light" src="assets/logo_light.png" alt=""></a>
+    <nav class="nav" id="nav">
+      <a href="#progetto">Il progetto</a>
+      <a href="#territorio">Territorio pilota</a>
+      <a href="#assistente">L’assistente</a>
+      <a href="#webapp">La web app</a>
+      <a href="#rete">La rete</a>
+    </nav>
+    <a href="#contatti" class="btn btn-dark btn-sm">Parla con Initalya</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- ======= HERO ======= -->
+<section class="hero grain" id="top">
+  <div class="hero-bg">
+    <video autoplay muted loop playsinline preload="metadata" poster="assets/hero-poster.jpg">
+      <source src="assets/hero-loop.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="hero-veil"></div>
+  <div class="container hero-inner">
+    <div class="hero-copy">
+      <p class="hero-kicker">Turismo esperienziale · Italia</p>
+      <h1>Initalya<span class="tld">.it</span></h1>
+      <p class="hero-sub"><em>L’assistente AI multilingue che trasforma ogni viaggio in un’esperienza autentica.</em></p>
+      <p class="hero-text">Una web app nazionale che ascolta, consiglia e costruisce itinerari personali tra le esperienze autentiche dei territori italiani.</p>
+      <div class="hero-cta">
+        <a href="#progetto" class="btn btn-terra">Scopri l’ecosistema <span class="arrow">→</span></a>
+        <span class="hero-note"><span class="dot"></span> Da Città Sant’Angelo, primo territorio pilota.</span>
+      </div>
+    </div>
+    <div class="hero-phone">
+      <div class="phone-frame phone-frame-lg">
+        <div class="phone-notch"></div>
+        <video autoplay muted loop playsinline preload="metadata" poster="assets/hero-poster.jpg">
+          <source src="assets/hero-loop.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="float-chip float-chip-1"><span class="fc-label">Esperienza autentica</span>Degustazione nel borgo</div>
+      <div class="float-chip float-chip-2"><span class="fc-label">Assistente virtuale</span>Parla nella tua lingua</div>
+    </div>
+  </div>
+  <a class="scroll-cue" href="#progetto" aria-label="Scorri per scoprire"><span></span></a>
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>Assistente virtuale</span><i>✦</i><span>Multilingue</span><i>✦</i><span>Esperienze autentiche</span><i>✦</i><span>Borghi d’Italia</span><i>✦</i><span>Visione nazionale</span><i>✦</i>
+      <span>Assistente virtuale</span><i>✦</i><span>Multilingue</span><i>✦</i><span>Esperienze autentiche</span><i>✦</i><span>Borghi d’Italia</span><i>✦</i><span>Visione nazionale</span><i>✦</i>
+    </div>
+  </div>
+</section>
+
+<!-- ======= DUE ANIME ======= -->
+<section class="section" id="progetto">
+  <span class="ghost-num" aria-hidden="true">01</span>
+  <div class="container">
+    <p class="eyebrow reveal"><span class="num">01</span> Due anime, un unico progetto</p>
+    <h2 class="reveal">Initalya racconta i territori<br> 
+      <span class="green">con video e ricostruzioni storiche AI.</span><br> 
+      <em class="terra">Poi li trasforma in esperienze.</em>
+    </h2>
+    <div class="split reveal">
+      <p class="lead">Initalya non sarà soltanto una piattaforma di servizi per il turista: avrà anche un canale social dedicato alle ricostruzioni storiche realizzate con l’AI, per raccontare ogni borgo e territorio italiano.</p>
+      <div class="pull-quote"><span class="pq-label">Un solo ecosistema</span>I social accendono l’interesse. La piattaforma lo accompagna fino al territorio.</div>
+    </div>
+
+    <div class="anime-grid">
+      <article class="anime-card anime-card-warm reveal">
+        <div class="anime-media"><img src="assets/social_tablet.jpg" alt="Canale social Initalya — archivio di video e ricostruzioni storiche AI" loading="lazy"></div>
+        <div class="anime-body">
+          <span class="chip chip-terra">Canale social Initalya</span>
+          <h3>La storia <em class="terra">torna viva.</em></h3>
+          <p>Ricostruzioni storiche create con l’AI fanno scoprire luoghi, personaggi e identità dei borghi italiani.</p>
+        </div>
+      </article>
+      <div class="anime-arrow reveal delay-1"><span>→</span><small>L’interesse diventa azione</small></div>
+      <article class="anime-card anime-card-green reveal delay-1">
+        <div class="anime-media"><img src="assets/chat_panel.png" alt="Piattaforma Initalya — conversazione con l’assistente" loading="lazy"></div>
+        <div class="anime-body">
+          <span class="chip chip-green">Piattaforma Initalya</span>
+          <h3>La scoperta <em class="green-i">diventa viaggio.</em></h3>
+          <p>L’assistente virtuale multilingue trasforma l’interesse in itinerari, servizi ed esperienze autentiche.</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="flow-strip reveal">
+      <span>▶ Social</span><i></i><span>♥ Interesse</span><i></i><span>✦ Assistente</span><i></i><span>↗ Itinerario</span><i></i><span>◎ Esperienza</span>
+    </div>
+  </div>
+</section>
+
+<!-- ======= TERRITORIO PILOTA ======= -->
+<section class="section section-soft" id="territorio">
+  <span class="ghost-num" aria-hidden="true">02</span>
+  <div class="container">
+    <p class="eyebrow reveal"><span class="num">02</span> Il primo territorio pilota</p>
+    <div class="territorio-grid">
+      <div class="reveal">
+        <h2>Città Sant’Angelo.<br> <em class="terra">Il primo territorio di un progetto nazionale.</em></h2>
+        <p class="lead">Qui Initalya valida il modello: identità locale, esperienze autentiche e un assistente capace di accompagnare ogni viaggiatore nella propria lingua.</p>
+      </div>
+      <div class="territorio-cards">
+        <div class="info-card reveal">
+          <div class="ic-head"><span class="chip chip-terra">Il territorio</span><small>Città Sant’Angelo</small></div>
+          <div class="ic-body">
+            <div class="ic-badge">Abruzzo <small>Identità locale</small></div>
+            <p>Una città ricca di storia, gusto, paesaggi e persone: il luogo ideale da cui far partire il progetto.</p>
+          </div>
+        </div>
+        <div class="info-card reveal delay-1">
+          <div class="ic-head"><span class="chip chip-green">Assistente multilingue</span><small>Il modello da replicare</small></div>
+          <div class="ic-body">
+            <div class="steps-inline">
+              <span>Parla</span><i>→</i><span>Scopri</span><i>→</i><span>Organizza</span><i>→</i><span>Vivi</span>
+            </div>
+            <p>L’assistente comprende il viaggiatore, propone esperienze autentiche e costruisce un viaggio personale.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="banner reveal">Il progetto comincia a Città Sant’Angelo. <strong>L’ambizione è portarlo, territorio per territorio, in tutta Italia.</strong></div>
+    <div class="stats reveal" id="stats">
+      <div class="stat"><strong><span data-count="8000">0</span>+</strong><span class="stat-label">comuni italiani da raccontare</span></div>
+      <i></i>
+      <div class="stat"><strong><span data-count="20">0</span></strong><span class="stat-label">regioni, un’unica visione</span></div>
+      <i></i>
+      <div class="stat"><strong><span data-count="2">0</span></strong><span class="stat-label">anime: social e piattaforma</span></div>
+      <i></i>
+      <div class="stat"><strong><span data-count="1">0</span></strong><span class="stat-label">assistente multilingue</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= ASSISTENTE (DARK) ======= -->
+<section class="section section-dark grain" id="assistente">
+  <span class="ghost-num" aria-hidden="true">03</span>
+  <div class="container">
+    <div class="dark-grid">
+      <div class="reveal">
+        <p class="eyebrow eyebrow-gold"><span class="num num-gold">03</span> Dal desiderio all’assistente</p>
+        <h2 class="light">Ogni interesse diventa<br> <em class="gold">una conversazione.</em></h2>
+        <p class="lead lead-light">Il viaggiatore scrive nella propria lingua ciò che desidera vivere. L’assistente Initalya comprende, propone esperienze autentiche e costruisce il percorso.</p>
+        <ol class="num-steps">
+          <li><strong>Racconta cosa cerchi</strong><span>Interessi, tempo, budget e compagnia.</span></li>
+          <li><strong>L’assistente comprende</strong><span>Dialoga nella lingua del viaggiatore.</span></li>
+          <li><strong>Initalya costruisce</strong><span>Esperienze e itinerario personale.</span></li>
+        </ol>
+        <p class="check">✓ <strong>Intelligenza artificiale, identità locale.</strong> La tecnologia orienta; contenuti ed esperienze vengono validati con il territorio.</p>
+      </div>
+      <div class="dark-visual reveal delay-1">
+        <div class="phone-frame phone-chat">
+          <div class="phone-notch"></div>
+          <div class="chat-ui">
+            <div class="chat-head">
+              <span class="chat-avatar">in</span>
+              <div class="chat-head-txt">
+                <strong>Assistente Initalya</strong>
+                <span><i class="online"></i> multilingue · pronto ad ascoltarti</span>
+              </div>
+              <span class="chat-lang">IT</span>
+            </div>
+            <div class="chat-body" id="chatBody"></div>
+            <div class="chat-input">
+              <span class="chat-input-text" id="chatInputText">Scrivi qui…</span>
+              <span class="chat-send">→</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= QUATTRO PASSI ======= -->
+<section class="section" id="passi">
+  <span class="ghost-num" aria-hidden="true">04</span>
+  <div class="container">
+    <p class="eyebrow reveal"><span class="num">04</span> L’esperienza utente</p>
+    <h2 class="reveal">Una conversazione.<br> <em class="terra">Quattro passi verso il viaggio.</em></h2>
+    <p class="lead reveal">L’assistente multilingue collega i desideri del viaggiatore alle esperienze autentiche di Città Sant’Angelo, fino a un’azione concreta verso il territorio.</p>
+
+    <div class="passi-carousel reveal">
+      <div class="passi-scroller" id="passiScroller">
+        <article class="passo" data-num="01">
+          <img src="assets/step_scopre.png" alt="Schermata Scopre" loading="lazy">
+          <div class="passo-copy">
+            <span class="chip chip-green">01 · Scopre</span>
+            <h3>Dalla scoperta all’esperienza</h3>
+            <p>Initalya apre Città Sant’Angelo attraverso esperienze autentiche, già coerenti con gli interessi del viaggiatore.</p>
+          </div>
+        </article>
+        <article class="passo" data-num="02">
+          <img src="assets/step_capisce.png" alt="Schermata Capisce — chat con l’assistente" loading="lazy">
+          <div class="passo-copy">
+            <span class="chip chip-green">02 · Capisce</span>
+            <h3>Conversa nella lingua del viaggiatore</h3>
+            <p>L’assistente raccoglie desideri, tempo, budget e compagnia attraverso una conversazione semplice e multilingue.</p>
+          </div>
+        </article>
+        <article class="passo" data-num="03">
+          <img src="assets/step_organizza.png" alt="Schermata Organizza — itinerario" loading="lazy">
+          <div class="passo-copy">
+            <span class="chip chip-green">03 · Organizza</span>
+            <h3>Crea un itinerario su misura</h3>
+            <p>La conversazione diventa tappe, tempi, mappa e alternative, mantenendo al centro le esperienze autentiche.</p>
+          </div>
+        </article>
+        <article class="passo" data-num="04">
+          <img src="assets/step_converte.png" alt="Schermata Converte — richiesta disponibilità" loading="lazy">
+          <div class="passo-copy">
+            <span class="chip chip-green">04 · Converte</span>
+            <h3>Trasforma la scoperta in esperienza</h3>
+            <p>Esperienze, tavoli, alloggi ed eventi entrano nel viaggio con un’azione tracciabile verso l’operatore.</p>
+          </div>
+        </article>
+      </div>
+      <div class="passi-nav">
+        <div class="passi-dots" id="passiDots" role="tablist" aria-label="Passi"></div>
+        <div class="passi-arrows">
+          <button class="p-arrow" id="passiPrev" type="button" aria-label="Passo precedente">←</button>
+          <button class="p-arrow" id="passiNext" type="button" aria-label="Passo successivo">→</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= WEB APP GALLERY ======= -->
+<section class="section section-soft" id="webapp">
+  <span class="ghost-num" aria-hidden="true">05</span>
+  <div class="container">
+    <p class="eyebrow reveal"><span class="num">05</span> Il prodotto, schermata per schermata</p>
+    <h2 class="reveal">Un assistente nazionale.<br> <em class="terra">Territorio per territorio.</em></h2>
+    <div class="split reveal">
+      <p class="lead">Il pilota di Città Sant’Angelo mostra il primo ecosistema locale; la stessa esperienza è pensata per estendersi progressivamente in tutta Italia.</p>
+      <div class="legend">
+        <span><span class="chip chip-green">MVP</span> Funzioni della prima versione</span>
+        <span><span class="chip chip-gold">Evoluzione</span> Booking integrato successivo</span>
+      </div>
+    </div>
+  </div>
+  <div class="gallery" id="gallery">
+    <div class="gallery-track container">
+      <figure class="shot reveal">
+        <div class="phone-frame"><img src="assets/mvp_home.png" alt="Home della web app" loading="lazy"></div>
+        <figcaption><strong>01 · Home</strong>Tutto parte dalle esperienze autentiche.</figcaption>
+      </figure>
+      <figure class="shot reveal">
+        <div class="phone-frame"><img src="assets/mvp_regioni.png" alt="Esplorazione per regioni" loading="lazy"></div>
+        <figcaption><strong>02 · Regioni</strong>L’Italia autentica, regione per regione.</figcaption>
+      </figure>
+      <figure class="shot reveal">
+        <div class="phone-frame"><img src="assets/mvp_borgo.png" alt="Scheda del borgo" loading="lazy"></div>
+        <figcaption><strong>03 · Il borgo</strong>Città Sant’Angelo diventa una destinazione.</figcaption>
+      </figure>
+      <figure class="shot reveal">
+        <div class="phone-frame"><img src="assets/mvp_itinerario.png" alt="Itinerario creato dall’assistente" loading="lazy"></div>
+        <figcaption><strong>04 · Itinerario AI</strong>L’assistente crea e affina l’itinerario.</figcaption>
+      </figure>
+      <figure class="shot reveal">
+        <div class="phone-frame"><img src="assets/mvp_area.png" alt="Area personale" loading="lazy"></div>
+        <figcaption><strong>05 · Area personale</strong>Il viaggio continua nel tempo.</figcaption>
+      </figure>
+      <figure class="shot reveal">
+        <div class="phone-frame"><img src="assets/mvp_dashboard.png" alt="Dashboard per il Comune" loading="lazy"></div>
+        <figcaption><strong>06 · Dashboard Comune</strong>Il territorio vede come nascono le esperienze.</figcaption>
+      </figure>
+    </div>
+  </div>
+  <div class="container gallery-progress"><span id="galleryBar"></span></div>
+  <p class="gallery-hint container">← Trascina per esplorare le schermate →</p>
+</section>
+
+<!-- ======= RETE / CATALOGO ======= -->
+<section class="section" id="rete">
+  <span class="ghost-num" aria-hidden="true">06</span>
+  <div class="container">
+    <p class="eyebrow reveal"><span class="num">06</span> Le esperienze autentiche</p>
+    <h2 class="reveal">Un territorio oggi.<br> <em class="terra">Una rete nazionale domani.</em></h2>
+    <p class="lead reveal">Città Sant’Angelo è il primo catalogo locale di un modello pensato per collegare viaggiatori e operatori in tutta Italia.</p>
+
+    <div class="exp-grid">
+      <article class="exp-card reveal">
+        <img src="assets/exp_esperienze.jpg" alt="Degustazione di vino e prodotti locali tra le vie del borgo" loading="lazy">
+        <span class="exp-frame" aria-hidden="true"></span>
+        <div class="exp-top"><span class="exp-num">I</span><span class="exp-tag">Esperienze</span></div>
+        <div class="exp-body">
+          <h3>Degustazioni nel borgo</h3>
+          <p>Attività, laboratori e visite diventano tappe vive dell’itinerario.</p>
+        </div>
+      </article>
+      <article class="exp-card reveal delay-1">
+        <img src="assets/exp_ristoranti.jpg" alt="Pasta fresca servita in una trattoria del borgo" loading="lazy">
+        <span class="exp-frame" aria-hidden="true"></span>
+        <div class="exp-top"><span class="exp-num">II</span><span class="exp-tag">Ristoranti</span></div>
+        <div class="exp-body">
+          <h3>Sapori del territorio</h3>
+          <p>La proposta gastronomica incontra momento, zona e preferenze del viaggio.</p>
+        </div>
+      </article>
+      <article class="exp-card reveal delay-2">
+        <img src="assets/exp_alloggi.jpg" alt="Camera in pietra di una dimora diffusa con vista sulle colline" loading="lazy">
+        <span class="exp-frame" aria-hidden="true"></span>
+        <div class="exp-top"><span class="exp-num">III</span><span class="exp-tag">Alloggi</span></div>
+        <div class="exp-body">
+          <h3>Dimora diffusa</h3>
+          <p>Ospitalità diffusa e strutture coerenti con il percorso suggerito.</p>
+        </div>
+      </article>
+      <article class="exp-card reveal delay-3">
+        <img src="assets/exp_eventi.jpg" alt="Concerto serale nella piazza del borgo" loading="lazy">
+        <span class="exp-frame" aria-hidden="true"></span>
+        <div class="exp-top"><span class="exp-num">IV</span><span class="exp-tag">Locali &amp; eventi</span></div>
+        <div class="exp-body">
+          <h3>Suoni nel borgo</h3>
+          <p>Programmazione locale e occasioni da vivere nel momento giusto.</p>
+        </div>
+      </article>
+    </div>
+    <div class="banner banner-soft reveal"><span class="chip chip-green">MVP</span> Azioni tracciate verso i partner, misurabili anche prima del booking nativo.</div>
+  </div>
+</section>
+
+<!-- ======= VIDEO SOCIAL ======= -->
+<section class="section section-dark section-video grain">
+  <span class="ghost-num" aria-hidden="true">07</span>
+  <div class="container video-grid">
+    <div class="reveal">
+      <p class="eyebrow eyebrow-gold"><span class="num num-gold">07</span> Canale social Initalya</p>
+      <h2 class="light">Ogni borgo ritrova<br> <em class="gold">la propria storia.</em></h2>
+      <p class="lead lead-light">Un esempio reale dal canale: la ricostruzione storica AI dedicata ai borghi italiani, girata come un racconto in prima persona tra passato e presente.</p>
+      <button class="btn btn-terra" id="playSocial" type="button">Guarda · Scopri <span class="arrow">→</span></button>
+    </div>
+    <div class="video-phone reveal delay-1">
+      <div class="phone-frame phone-frame-lg">
+        <div class="phone-notch"></div>
+        <video controls preload="none" playsinline poster="assets/hero-poster.jpg">
+          <source src="assets/santangelo-full.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= CLOSING CTA ======= -->
+<section class="closing grain" id="contatti">
+  <div class="closing-bg" style="background-image:url(assets/closing_bg.jpg)"></div>
+  <div class="closing-veil"></div>
+  <div class="container closing-inner">
+    <div class="reveal">
+      <span class="chip chip-dark">Da Città Sant’Angelo a tutta Italia</span>
+      <h2 class="light">Un nuovo modello di<br> <em class="gold">turismo esperienziale italiano.</em></h2>
+      <p class="lead lead-light">Initalya non è una piattaforma generalista di informazioni, ma un ecosistema su misura per il turista e il cittadino.</p>
+      <div class="pillars">
+        <div class="pillar"><small>Il motore</small><strong>AI</strong></div>
+        <div class="pillar"><small>Il patrimonio</small><strong>Territorio</strong></div>
+        <div class="pillar"><small>Il vantaggio competitivo</small><strong>Rete</strong></div>
+      </div>
+      <div class="closing-cta">
+        <a href="mailto:info@initalya.it?subject=Progetto%20pilota%20Initalya" class="btn btn-terra">Avviamo il progetto pilota <span class="arrow">→</span></a>
+        <div class="proposta"><small>Proposta</small><strong>Avviamo il progetto pilota a Città Sant’Angelo.</strong><span>Esperienze · operatori locali · itinerari · misurazione</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= FOOTER ======= -->
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <img src="assets/logo_light.png" alt="Initalya">
+      <p>Turismo esperienziale, assistente AI multilingue,<br> identità dei territori italiani.</p>
+    </div>
+    <div class="footer-links">
+      <a href="#progetto">Il progetto</a>
+      <a href="#territorio">Territorio pilota</a>
+      <a href="#webapp">La web app</a>
+      <a href="mailto:info@initalya.it">info@initalya.it</a>
+    </div>
+  </div>
+  <div class="container footer-note">
+    <span>© 2026 Initalya · Città Sant’Angelo, primo territorio pilota</span>
+    <span>I dati e le interfacce presentati sono dimostrativi.</span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
