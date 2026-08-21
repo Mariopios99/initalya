@@ -83,33 +83,14 @@ const io = new IntersectionObserver(entries => {
 }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-// Canale social: il telefono passa dal profilo al player del video completo
+// Bottone "Guarda": porta al video del canale e lo avvia
 const playBtn = document.getElementById('playSocial');
-const socialProfile = document.getElementById('socialProfile');
-const socialPlayer = document.getElementById('socialPlayer');
-if (playBtn && socialProfile && socialPlayer) {
-  const fullVideo = socialPlayer.querySelector('video');
+if (playBtn) {
   playBtn.addEventListener('click', () => {
-    socialProfile.hidden = true;
-    socialPlayer.hidden = false;
-    socialPlayer.closest('.phone-social').scrollIntoView({ behavior: 'smooth', block: 'center' });
-    fullVideo.play().catch(() => {});
+    const v = document.querySelector('.video-phone video');
+    v.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    v.play().catch(() => {});
   });
-  document.getElementById('socialBack').addEventListener('click', () => {
-    fullVideo.pause();
-    socialPlayer.hidden = true;
-    socialProfile.hidden = false;
-  });
-}
-
-// Reel del profilo: partono solo quando visibili
-const reels = document.querySelectorAll('.reel video');
-if (reels.length) {
-  const rio = new IntersectionObserver(entries => entries.forEach(e => {
-    if (e.isIntersecting && !reducedMotion) e.target.play().catch(() => {});
-    else e.target.pause();
-  }), { threshold: 0.25 });
-  reels.forEach(v => rio.observe(v));
 }
 
 // Manifesto: le parole si accendono con lo scroll
