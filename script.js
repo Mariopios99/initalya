@@ -259,9 +259,8 @@ document.querySelectorAll('.faq').forEach(d => {
   });
 });
 
-// Contatori animati
-const stats = document.getElementById('stats');
-if (stats) {
+// Contatori animati (sezione territorio + sezione "perché ora")
+{
   const fmt = n => n.toLocaleString('it-IT');
   const animateCount = el => {
     const target = +el.dataset.count;
@@ -276,15 +275,17 @@ if (stats) {
     };
     requestAnimationFrame(tick);
   };
-  const so = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        stats.querySelectorAll('[data-count]').forEach(animateCount);
-        so.disconnect();
-      }
-    });
-  }, { threshold: 0.35 });
-  so.observe(stats);
+  document.querySelectorAll('.stats, .num-grid').forEach(box => {
+    const so = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          box.querySelectorAll('[data-count]').forEach(animateCount);
+          so.disconnect();
+        }
+      });
+    }, { threshold: 0.3 });
+    so.observe(box);
+  });
 }
 
 // Carosello "Quattro passi": dots, frecce, snap

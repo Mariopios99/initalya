@@ -352,6 +352,39 @@ html.intro-hold .hero-copy>*,html.intro-hold .hero-phone{animation-play-state:pa
 .itin-foot strong{font-family:var(--serif);font-size:1.3rem;color:var(--verde)}
 .it-go{font-size:.58rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#fff;background:var(--verde-medio);border-radius:999px;padding:9px 13px;white-space:nowrap}
 
+/* confronto */
+.vs-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:stretch;margin-top:56px}
+.vs-card{border-radius:var(--r-lg);padding:36px 38px}
+.vs-card ul{list-style:none;display:grid;gap:15px}
+.vs-card li{display:flex;gap:13px;align-items:flex-start;font-size:.98rem;line-height:1.5}
+.vs-them{background:var(--bianco);border:1px solid rgba(14,47,37,.08);color:var(--grigio)}
+.vs-them h3{color:var(--grigio);font-size:1.25rem;margin-bottom:24px}
+.vs-them li::before{content:"✕";color:rgba(94,107,100,.5);font-weight:600;flex:none}
+.vs-us{background:radial-gradient(120% 130% at 85% -10%,#17492F 0%,var(--verde) 60%);color:var(--crema);box-shadow:0 30px 70px rgba(14,47,37,.28);transform:scale(1.03);transition:transform .4s var(--ease)}
+.vs-us:hover{transform:scale(1.045)}
+.vs-logo{height:30px;width:auto;margin-bottom:26px}
+.vs-us li::before{content:"✓";color:var(--oro);font-weight:700;flex:none}
+
+/* perché ora — numeri */
+.num-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:56px}
+.num-card{background:var(--bianco);border-radius:var(--r-md);padding:30px 26px;box-shadow:var(--shadow);display:grid;gap:9px;align-content:start;transition:transform .35s var(--ease)}
+.num-card:hover{transform:translateY(-6px)}
+.num-card strong{font-family:var(--serif);font-weight:500;font-size:clamp(2.3rem,3.4vw,3rem);line-height:1;color:var(--terra);letter-spacing:-.02em;white-space:nowrap}
+.num-label{font-size:.88rem;color:var(--inchiostro);line-height:1.45}
+.num-card small{font-size:.66rem;color:var(--grigio);letter-spacing:.04em}
+
+/* racconta il tuo borgo */
+.tell-card{display:grid;grid-template-columns:.85fr 1.15fr;gap:54px;align-items:center;background:linear-gradient(160deg,#F6E7DC,#F2DECE);border-radius:var(--r-lg);padding:56px 58px;box-shadow:var(--shadow)}
+.tell-photos{position:relative;height:330px}
+.tell-photos img{position:absolute;width:190px;border-radius:14px;border:5px solid #fff;box-shadow:0 18px 40px rgba(14,47,37,.22);transition:transform .5s var(--ease)}
+.tell-photos img:nth-child(1){left:0;top:16%;transform:rotate(-7deg)}
+.tell-photos img:nth-child(2){left:30%;top:0;transform:rotate(3deg);z-index:2}
+.tell-photos img:nth-child(3){left:55%;top:24%;transform:rotate(9deg)}
+.tell-card:hover .tell-photos img:nth-child(1){transform:rotate(-4deg) translateY(-8px)}
+.tell-card:hover .tell-photos img:nth-child(2){transform:rotate(1deg) translateY(-10px)}
+.tell-card:hover .tell-photos img:nth-child(3){transform:rotate(6deg) translateY(-8px)}
+.tell-copy .lead{margin-bottom:30px}
+
 /* manifesto */
 .manifesto .container{max-width:980px}
 .mani-text{font-family:var(--serif);font-weight:500;font-size:clamp(1.75rem,4.3vw,3rem);line-height:1.33;letter-spacing:-.01em;margin-top:20px;text-wrap:balance}
@@ -432,6 +465,13 @@ html.intro-hold .hero-copy>*,html.intro-hold .hero-phone{animation-play-state:pa
   .anime-arrow span{transform:rotate(90deg)}
   .exp-grid{grid-template-columns:repeat(2,1fr)}
   .video-phone{justify-self:center}
+  .vs-grid{grid-template-columns:1fr;gap:20px}
+  .vs-us{transform:none}
+  .vs-us:hover{transform:translateY(-4px)}
+  .num-grid{grid-template-columns:1fr 1fr;margin-top:44px}
+  .tell-card{grid-template-columns:1fr;gap:36px;padding:40px 34px}
+  .tell-photos{height:250px;max-width:420px;margin:0 auto;width:100%}
+  .tell-photos img{width:150px}
   .ghost-num{font-size:clamp(7rem,26vw,12rem);top:8px}
 }
 @media (max-width:720px){
@@ -484,6 +524,15 @@ html.intro-hold .hero-copy>*,html.intro-hold .hero-phone{animation-play-state:pa
   .pillar{padding:14px 18px}
   .pillar strong{font-size:1.35rem}
   .phone-itin{width:274px}
+  .vs-card{padding:26px 24px}
+  .num-grid{grid-template-columns:1fr 1fr;gap:14px}
+  .num-card{padding:22px 18px}
+  .num-card strong{font-size:1.9rem}
+  .num-label{font-size:.8rem}
+  .tell-card{padding:32px 24px;gap:28px}
+  .tell-photos{height:210px}
+  .tell-photos img{width:124px}
+  .tell-copy .btn{width:100%}
   .model-steps{display:grid;grid-template-columns:1fr 1fr;gap:9px}
   .m-arrow{display:none}
   .m-step{padding:15px 6px;font-size:1.08rem;gap:6px}
