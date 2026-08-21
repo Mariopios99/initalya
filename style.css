@@ -180,16 +180,27 @@ html.intro-hold .hero-copy>*,html.intro-hold .hero-phone{animation-play-state:pa
 /* territorio */
 .territorio-grid{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:start}
 .territorio-cards{display:grid;gap:22px}
-.info-card{background:var(--bianco);border-radius:var(--r-md);box-shadow:var(--shadow);overflow:hidden;transition:transform .35s var(--ease)}
-.info-card:hover{transform:translateY(-4px)}
-.ic-head{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:16px 22px;border-bottom:1px solid rgba(14,47,37,.07)}
-.ic-head small{font-size:.66rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--grigio);text-align:right}
-.ic-body{padding:20px 22px}
-.ic-body p{font-size:.92rem;color:var(--grigio)}
-.ic-badge{display:inline-block;background:var(--crema);border:1px solid rgba(196,103,74,.3);border-radius:12px;padding:8px 16px;font-family:var(--serif);font-size:1.15rem;color:var(--terra);margin-bottom:14px}
-.ic-badge small{display:block;font-family:var(--sans);font-size:.58rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--grigio)}
-.steps-inline{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:14px;font-weight:600;font-size:.85rem;color:var(--verde)}
-.steps-inline i{color:var(--verde-medio);font-style:normal}
+.terr-card{background:var(--bianco);border-radius:var(--r-md);box-shadow:var(--shadow);overflow:hidden;transition:transform .4s var(--ease),box-shadow .4s var(--ease)}
+.terr-card:hover{transform:translateY(-5px);box-shadow:0 26px 60px rgba(14,47,37,.2)}
+.terr-cover{position:relative;min-height:215px;background-size:cover;background-position:center 28%;display:flex;flex-direction:column;justify-content:flex-end;align-items:flex-start;gap:8px;padding:20px;overflow:hidden}
+.terr-cover::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(9,29,27,.08) 25%,rgba(9,29,27,.8))}
+.terr-cover>*{position:relative}
+.terr-cover .chip{font-size:.58rem}
+.terr-cover h3{font-size:1.95rem;color:var(--crema)}
+.terr-badge{display:flex;align-items:center;gap:9px;font-size:.6rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--oro-chiaro)}
+.terr-badge::before{content:"";width:28px;height:1px;background:var(--oro)}
+.terr-card>p{padding:18px 22px 22px;font-size:.95rem;color:var(--grigio)}
+
+.model-card{border-radius:var(--r-md);background:radial-gradient(130% 140% at 88% -10%,#17492F 0%,var(--verde) 62%);color:var(--crema);padding:22px 22px 24px;box-shadow:var(--shadow);transition:transform .4s var(--ease)}
+.model-card:hover{transform:translateY(-5px)}
+.model-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:20px}
+.model-head small{font-size:.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(247,242,233,.5);text-align:right}
+.model-steps{display:flex;align-items:center;gap:7px;margin-bottom:18px}
+.m-step{flex:1;display:grid;justify-items:center;gap:4px;background:rgba(247,242,233,.07);border:1px solid rgba(247,242,233,.14);border-radius:14px;padding:12px 4px;font-family:var(--serif);font-size:.98rem;line-height:1;transition:background .3s,border-color .3s}
+.m-step:hover{background:rgba(247,242,233,.13);border-color:rgba(201,169,106,.5)}
+.m-step i{font-style:normal;font-family:var(--sans);font-size:.54rem;font-weight:700;letter-spacing:.12em;color:var(--oro)}
+.m-arrow{color:var(--oro);font-size:.8rem;flex:none}
+.model-card>p{font-size:.92rem;color:rgba(247,242,233,.72)}
 .banner{margin-top:56px;background:var(--verde);color:rgba(247,242,233,.85);border-radius:var(--r-md);padding:26px 34px;font-size:1.02rem;text-align:center}
 .banner strong{color:var(--crema)}
 .banner-soft{background:var(--bianco);color:var(--grigio);box-shadow:var(--shadow);display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap}
@@ -488,6 +499,11 @@ html.intro-hold .hero-copy>*,html.intro-hold .hero-phone{animation-play-state:pa
   .pillar{padding:14px 18px}
   .pillar strong{font-size:1.35rem}
   .phone-itin{width:274px}
+  .model-steps{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+  .m-arrow{display:none}
+  .m-step{padding:15px 6px;font-size:1.08rem;gap:6px}
+  .terr-cover{min-height:200px}
+  .terr-cover h3{font-size:1.7rem}
   .mani-text{margin-top:12px}
   .soon-chip{margin-top:20px}
   .video-grid .btn{width:100%}
