@@ -252,6 +252,76 @@ if (chatBody) {
   }
 }
 
+// Mini-chat nella card "due anime": conversazione breve in loop
+const miniBody = document.getElementById('miniChat');
+if (miniBody) {
+  const madd = (cls, html) => {
+    const d = document.createElement('div');
+    d.className = 'mn-msg ' + cls;
+    d.innerHTML = html;
+    miniBody.appendChild(d);
+    setTimeout(() => d.classList.add('in'), 30);
+    return d;
+  };
+  if (reducedMotion) {
+    madd('mn-ai', 'Cosa vuoi vivere in Italia?');
+    madd('mn-user', 'Un weekend tra i borghi, budget 450 €.');
+    madd('mn-ai', 'Ecco il tuo itinerario tra sapori e storia ✦');
+  } else {
+    let miniVis = false;
+    new IntersectionObserver(es => es.forEach(e => { miniVis = e.isIntersecting; }), { threshold: 0.3 })
+      .observe(miniBody);
+    const msl = ms => new Promise(r => setTimeout(r, ms));
+    const mwv = async () => { while (!miniVis) await msl(400); };
+    (async () => {
+      for (;;) {
+        await mwv();
+        miniBody.innerHTML = '';
+        await msl(500);
+        madd('mn-ai', 'Cosa vuoi vivere in Italia?');
+        await msl(1500);
+        madd('mn-user', 'Un weekend tra i borghi, budget 450 €.');
+        await msl(1100);
+        const t = madd('mn-ai mn-typing', '<span class="dot"></span><span class="dot"></span><span class="dot"></span>');
+        await msl(1500);
+        t.remove();
+        madd('mn-ai', 'Ecco il tuo itinerario tra sapori e storia ✦');
+        await msl(3800);
+        [...miniBody.children].forEach(c => c.classList.add('out'));
+        await msl(500);
+      }
+    })();
+  }
+}
+
+// Tilt 3D con riflesso sulle card "due anime" (desktop, solo mouse)
+if (!reducedMotion && matchMedia('(pointer:fine)').matches) {
+  document.querySelectorAll('.anime-card').forEach(card => {
+    const glare = document.createElement('span');
+    glare.className = 'card-glare';
+    card.appendChild(glare);
+    let raf = null;
+    card.addEventListener('mousemove', e => {
+      if (!matchMedia('(min-width:981px)').matches || raf) return;
+      raf = requestAnimationFrame(() => {
+        const r = card.getBoundingClientRect();
+        const px = (e.clientX - r.left) / r.width;
+        const py = (e.clientY - r.top) / r.height;
+        card.style.transition = 'transform .15s ease-out';
+        card.style.transform = 'perspective(950px) rotateX(' + ((0.5 - py) * 6).toFixed(2) + 'deg) rotateY(' + ((px - 0.5) * 8).toFixed(2) + 'deg) translateY(-6px)';
+        glare.style.background = 'radial-gradient(420px circle at ' + (px * 100).toFixed(1) + '% ' + (py * 100).toFixed(1) + '%, rgba(255,255,255,.22), transparent 60%)';
+        glare.style.opacity = 1;
+        raf = null;
+      });
+    });
+    card.addEventListener('mouseleave', () => {
+      card.style.transition = '';
+      card.style.transform = '';
+      glare.style.opacity = 0;
+    });
+  });
+}
+
 // FAQ: una sola aperta alla volta
 document.querySelectorAll('.faq').forEach(d => {
   d.addEventListener('toggle', () => {
