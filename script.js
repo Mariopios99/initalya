@@ -138,18 +138,29 @@ if (mani) {
 }
 
 // Drag-to-scroll orizzontale (galleria schermate + carosello passi)
+// Solo col mouse: su touch lo scorrimento nativo è già fluido e il drag
+// manuale entrerebbe in conflitto con lo scroll verticale della pagina.
 function makeDraggable(el) {
-  let down = false, moved = false, startX = 0, startScroll = 0;
+  let down = false, moved = false, startX = 0, startY = 0, startScroll = 0;
   el.addEventListener('pointerdown', e => {
+    if (e.pointerType !== 'mouse') return;
     down = true; moved = false;
     startX = e.clientX;
+    startY = e.clientY;
     startScroll = el.scrollLeft;
   });
   window.addEventListener('pointermove', e => {
     if (!down) return;
     const dx = e.clientX - startX;
-    if (Math.abs(dx) > 4 && !moved) { moved = true; el.classList.add('dragging'); }
-    if (moved) el.scrollLeft = startScroll - dx;
+    const dy = e.clientY - startY;
+    if (!moved) {
+      // il gesto diventa un trascinamento solo se è chiaramente orizzontale
+      if (Math.abs(dy) > Math.abs(dx)) { down = false; return; }
+      if (Math.abs(dx) < 5) return;
+      moved = true;
+      el.classList.add('dragging');
+    }
+    el.scrollLeft = startScroll - dx;
   });
   window.addEventListener('pointerup', () => {
     down = false;
