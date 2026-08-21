@@ -83,14 +83,77 @@ const io = new IntersectionObserver(entries => {
 }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-// Bottone "Guarda · Scopri": avvia il video del canale social
+// Canale social: il telefono passa dal profilo al player del video completo
 const playBtn = document.getElementById('playSocial');
-if (playBtn) {
+const socialProfile = document.getElementById('socialProfile');
+const socialPlayer = document.getElementById('socialPlayer');
+if (playBtn && socialProfile && socialPlayer) {
+  const fullVideo = socialPlayer.querySelector('video');
   playBtn.addEventListener('click', () => {
-    const v = document.querySelector('.video-phone video');
-    v.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    v.play();
+    socialProfile.hidden = true;
+    socialPlayer.hidden = false;
+    socialPlayer.closest('.phone-social').scrollIntoView({ behavior: 'smooth', block: 'center' });
+    fullVideo.play().catch(() => {});
   });
+  document.getElementById('socialBack').addEventListener('click', () => {
+    fullVideo.pause();
+    socialPlayer.hidden = true;
+    socialProfile.hidden = false;
+  });
+}
+
+// Reel del profilo: partono solo quando visibili
+const reels = document.querySelectorAll('.reel video');
+if (reels.length) {
+  const rio = new IntersectionObserver(entries => entries.forEach(e => {
+    if (e.isIntersecting && !reducedMotion) e.target.play().catch(() => {});
+    else e.target.pause();
+  }), { threshold: 0.25 });
+  reels.forEach(v => rio.observe(v));
+}
+
+// Manifesto: le parole si accendono con lo scroll
+const mani = document.getElementById('maniText');
+if (mani) {
+  const wrapWords = node => {
+    [...node.childNodes].forEach(ch => {
+      if (ch.nodeType === 3) {
+        const frag = document.createDocumentFragment();
+        ch.textContent.split(/(\s+)/).forEach(part => {
+          if (!part) return;
+          if (/^\s+$/.test(part)) frag.appendChild(document.createTextNode(part));
+          else {
+            const sp = document.createElement('span');
+            sp.className = 'w';
+            sp.textContent = part;
+            frag.appendChild(sp);
+          }
+        });
+        node.replaceChild(frag, ch);
+      } else if (ch.nodeType === 1) wrapWords(ch);
+    });
+  };
+  wrapWords(mani);
+  const words = [...mani.querySelectorAll('.w')];
+  if (reducedMotion) {
+    words.forEach(w => w.classList.add('on'));
+  } else {
+    let maniTick = false;
+    const updMani = () => {
+      if (maniTick) return;
+      maniTick = true;
+      requestAnimationFrame(() => {
+        const r = mani.getBoundingClientRect();
+        const vh = window.innerHeight;
+        const p = Math.min(1, Math.max(0, (vh * 0.85 - r.top) / (r.height + vh * 0.35)));
+        const n = Math.round(p * words.length);
+        words.forEach((w, i) => w.classList.toggle('on', i < n));
+        maniTick = false;
+      });
+    };
+    updMani();
+    window.addEventListener('scroll', updMani, { passive: true });
+  }
 }
 
 // Drag-to-scroll orizzontale (galleria schermate + carosello passi)
