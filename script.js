@@ -197,6 +197,13 @@ if (chatBody) {
   }
 }
 
+// FAQ: una sola aperta alla volta
+document.querySelectorAll('.faq').forEach(d => {
+  d.addEventListener('toggle', () => {
+    if (d.open) document.querySelectorAll('.faq[open]').forEach(o => { if (o !== d) o.open = false; });
+  });
+});
+
 // Contatori animati
 const stats = document.getElementById('stats');
 if (stats) {
